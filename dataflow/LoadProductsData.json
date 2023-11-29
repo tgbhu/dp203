@@ -17,6 +17,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "ProductTable"
+				},
+				{
+					"dataset": {
+						"referenceName": "DimProduct",
+						"type": "DatasetReference"
+					},
+					"name": "ProductTableFromVSCode"
 				}
 			],
 			"sinks": [
