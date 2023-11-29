@@ -57,6 +57,7 @@
 								"datasetParameters": {
 									"ProductsText": {},
 									"ProductTable": {},
+									"ProductTableFromVSCode": {},
 									"DimProductTable": {}
 								}
 							},
@@ -314,6 +315,13 @@
 								"type": "DatasetReference"
 							},
 							"name": "ProductTable"
+						},
+						{
+							"dataset": {
+								"referenceName": "DimProduct",
+								"type": "DatasetReference"
+							},
+							"name": "ProductTableFromVSCode"
 						}
 					],
 					"sinks": [
@@ -359,6 +367,11 @@
 						"     isolationLevel: 'READ_UNCOMMITTED',",
 						"     format: 'table',",
 						"     staged: true) ~> ProductTable",
+						"source(allowSchemaDrift: true,",
+						"     validateSchema: false,",
+						"     isolationLevel: 'READ_UNCOMMITTED',",
+						"     format: 'table',",
+						"     staged: false) ~> ",
 						"ProductsText, ProductTable lookup(ProductID == ProductAltKey,",
 						"     multiple: false,",
 						"     pickup: 'last',",
@@ -452,7 +465,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "cf81b06d-4c36-48bb-885c-ff5266769528"
+						"spark.autotune.trackingId": "ecc71e7e-17ff-4efa-bf7b-779dd32ebdd4"
 					}
 				},
 				"metadata": {
